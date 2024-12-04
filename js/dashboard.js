@@ -150,6 +150,21 @@ const handleImage = () => {
   }
 };
 
+const handleImageEdit = () => {
+  const file = document.querySelector("#file-edit").files[0];
+  console.log(file);
+
+  if (file) {
+    var fileReader = new FileReader();
+
+    fileReader.onload = function (fileLoadedEvent) {
+      const base64Url = fileLoadedEvent.target.result; // <--- data: base64
+      document.querySelector(".image-edit img").src = base64Url;
+    };
+    fileReader.readAsDataURL(file);
+  }
+};
+
 const addProduct = async () => {
   const img = document.querySelector(".image img");
 
