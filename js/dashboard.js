@@ -17,12 +17,11 @@ const filterProduct = (e) => {
   cleanListProduct();
 
   if (e.value) {
-    const filtered = tbProducts.filter((product) => product.includes(e.value));
+    for (i in tbProducts) {
+      const product = JSON.parse(tbProducts[i]);
 
-    for (i in filtered) {
-      const product = JSON.parse(filtered[i]);
-
-      buildProduct(product, i);
+      if (product.name.toUpperCase().indexOf(e.value.toUpperCase()) > -1)
+        buildProduct(product, i);
     }
   } else {
     listProduct();

@@ -242,6 +242,7 @@ main .filter input {
   gap: 1rem;
   justify-content: end;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 .alert {
@@ -259,4 +260,5 @@ main .filter input {
 .container-modal.modal-edit form .buttons div {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
